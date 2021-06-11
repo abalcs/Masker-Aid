@@ -1,0 +1,7 @@
+# Files
+.env
+.DS_Store
+
+# Folders
+Assets
+node_modules
