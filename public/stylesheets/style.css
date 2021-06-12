@@ -1,0 +1,49 @@
+html, body {
+    box-sizing: border-box; 
+    height: 100%;  
+    font-family: 'Lato', sans-serif;
+}
+
+ul {
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: flex-end;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+button {
+    padding: 15px !important;
+}
+
+.choice {
+    display: flex;
+}
+
+.img {
+    margin-top: 20px;
+}
+
+/* .img {
+    background-image: url(/mask.jpeg);
+} */
+
+button {
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}
