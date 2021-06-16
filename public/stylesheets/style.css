@@ -46,5 +46,6 @@ footer {
     width: 100%;
     height: 3rem;
     text-align: center;
-    background-color: lightgray;
+    color: white;
+    background-color: #07331e;
 }
