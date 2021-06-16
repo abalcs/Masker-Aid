@@ -1,15 +1,35 @@
-<h1>Which type of business are you hoping to visit?</h1>
+<div class="card bg-light row"></div>
+    <h1>Where would you like to search?</h1>
 
-<div class="choice">
-    <button type="button" class="btn btn-success" id="nomask">No Mask</button>
-    <button type="button" class="btn btn-danger" id="mask">Mask</button>
-</div>
+    {{!-- <div class="choice">
+        <button type="button" class="btn btn-success" id="nomask">No Mask</button>
+        <button type="button" class="btn btn-danger" id="mask">Mask</button>
+    </div> --}}
 
-<div class="img">
-    <img src="https://www.azdisabilitylaw.org/wp-content/uploads/2020/06/surgical-mask.jpg" alt="a picture of a mask" width="550px" height="350px">
-</div>
+   {{!-- <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="width: 10rem;">
+        Choose State
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><button class="dropdown-item" type="button">Massachusetts</button></li>
+        <li><button class="dropdown-item" type="button">New Hampshire</button></li>
+        <li><button class="dropdown-item" type="button">Maine</button></li>
+    </ul>
+    </div> --}}
+
+    <form id="input-form" class="mt-4">
+        <select class="browser-default ms-3 bg-warning shadow"  id="input">
+            <option disabled selected >Choose a state:</option>
+        </select><br>
+        <button id="button" type="submit" name="action" class="bg-success text-white rounded shadow" style="width: 9rem;">Show Results!</button>
+    </form>
+    
 
 
- {{!-- {{#if loggedIn}}
-        <script src="/public/javascript/logout.js"></script>
- {{/if}} --}}
+    <div class="img">
+        <img src="https://www.azdisabilitylaw.org/wp-content/uploads/2020/06/surgical-mask.jpg" alt="a picture of a mask" width="550px" height="350px">
+    </div>
+
+
+    <script src="/javascript/results.js"></script>
+

@@ -20,14 +20,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" style="color: white" id="signup">Sign Up</a>
+                    <a href="/" class="nav-link active" aria-current="page" href="#" style="color: white" id="home">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" href="#" style="color: white" id="login">Login</a>
+                    <a href="/about" class="nav-link active" href="#" style="color: white" id="about">About</a>
+                    </li>
+
+                        {{#if loggedIn}}
+                    <li class="nav-item" id="logout">
+                    <a class="nav-link active" href="#" style="color: white">Log Out</a>
+                    </li>
+                        {{else}}
+                    <li class="nav-item">
+                    <a href="/login" class="nav-link active" href="#" style="color: white" id="login">Login</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" href="#" style="color: white" id="about">About</a>
+                    <a href="/signup" class="nav-link active" aria-current="page" href="#" style="color: white" id="signup">Sign Up</a>
                     </li>
+                        {{/if}}
                 </ul>
                 </div>
             </div>
@@ -39,13 +49,18 @@
     </main>
 
     <footer>
-        <div class="row-is-full content has-text-centered">
+        <div>
             <p>
-            <strong>Masker-Aid</strong> by <a href="https://github.com/abalcs">Alan Balcom, James Clark, & Erica Fagioli</a> | source code:
+            <strong>Masker-Aid</strong> by <a href="https://github.com/abalcs" style="text-decoration: none; color: lightblue;">Alan Balcom, James Clark, & Erica Fagioli</a> | source code:
             <a href="https://github.com/abalcs/Masker-Aid"><i class="fab fa-github"></i></a> |  
             <a href="mailto:maskeraid@gmail.com"><i class="far fa-envelope"></i></a>
             </p>
         </div>
     </footer>
+
+    {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+    {{/if}}
+    
 </body>
 </html>
