@@ -20,14 +20,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
+                    <a href="/" class="nav-link active" aria-current="page" href="#" style="color: white" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
                     <a href="/signup" class="nav-link active" aria-current="page" href="#" style="color: white" id="signup">Sign Up</a>
                     </li>
                     <li class="nav-item">
-                    <a href="/login.handlebars" class="nav-link active" href="#" style="color: white" id="login">Login</a>
+                    <a href="/login" class="nav-link active" href="#" style="color: white" id="login">Login</a>
                     </li>
                     <li class="nav-item">
-                    <a href="/about.handlebars" class="nav-link active" href="#" style="color: white" id="about">About</a>
+                    <a href="/about" class="nav-link active" href="#" style="color: white" id="about">About</a>
                     </li>
+                        {{#if loggedIn}}
+                    <li class="nav-item">
+                    <a href="/logout" class="nav-link active" href="#" style="color: white" id="login">Log Out</a>
+                    </li>
+                        {{/if}}
                 </ul>
                 </div>
             </div>
@@ -47,5 +55,9 @@
             </p>
         </div>
     </footer>
+
+    {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 </html>

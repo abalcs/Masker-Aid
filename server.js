@@ -6,7 +6,6 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const helpers = require('./utils/helpers')
 const hbs = exphbs.create({ helpers });
-//Do we need helpers?
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,7 +13,7 @@ const PORT = process.env.PORT || 3001;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    secret: 'exaHash',
+    secret: 'Super secret secret',
     cookie: {
         expires: 10 * 60 * 1000
     },
@@ -37,5 +36,5 @@ app.set('view engine', 'handlebars');
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now Listening'));
+    app.listen(PORT, () => console.log(`Port ${PORT} is now active!`));
 })
