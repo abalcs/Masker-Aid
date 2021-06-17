@@ -20,3 +20,29 @@ font-family: 'Quicksand', sans-serif;
   </div>
 </div>
 
+      {{!-- <select id="choices">
+        <option value="1" id="mask">Requires Mask</option>
+        <option value="2" id="no-mask">Does Not Require Mask</option>
+        <option value="3" id="passport">Requires Proof of Vaccine</option>
+      </select> --}}
+
+      <!--The div element for the map -->
+      <div class="container mt-5">
+        {{!-- <input
+          id="pac-input"
+          class="controls"
+          type="text"
+          placeholder="Search Box"
+        /> --}}
+        <div id="map" style="height: 400px; width: 450px; margin-left: auto; margin-right: auto; border-radius: 10px;" class="shadow";></div>
+      </div>
+    </div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaXpjaqVUhl0MLKeyTqH2ZZIO-9izs96U&callback=initMap&libraries=&v=weekly"
+      async
+    ></script> -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaXpjaqVUhl0MLKeyTqH2ZZIO-9izs96U&libraries=places&callback=initMap"
+    ></script>
+    <script src="/javascript/places.js"></script>
