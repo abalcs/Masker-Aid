@@ -17,32 +17,18 @@ font-family: 'Quicksand', sans-serif;
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-      {{!-- <select id="choices">
-        <option value="1" id="mask">Requires Mask</option>
-        <option value="2" id="no-mask">Does Not Require Mask</option>
-        <option value="3" id="passport">Requires Proof of Vaccine</option>
-      </select> --}}
-
-      <!--The div element for the map -->
-      <div class="container mt-5">
-        {{!-- <input
-          id="pac-input"
+    <div class="container mt-5">
+        <input
+          id="autocomplete"
           class="controls"
           type="text"
-          placeholder="Search Box"
-        /> --}}
-        <div id="map" style="height: 400px; width: 450px; margin-left: auto; margin-right: auto; border-radius: 10px;" class="shadow";></div>
-      </div>
+          placeholder="Search Box">
     </div>
-
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <!-- <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaXpjaqVUhl0MLKeyTqH2ZZIO-9izs96U&callback=initMap&libraries=&v=weekly"
+  </div>
+</div>
+  <script src="/javascript/places.js"></script>
+    <script
       async
-    ></script> -->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaXpjaqVUhl0MLKeyTqH2ZZIO-9izs96U&libraries=places&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaXpjaqVUhl0MLKeyTqH2ZZIO-9izs96U&libraries=places&callback=initAutoComplete"
     ></script>
-    <script src="/javascript/places.js"></script>
+    
