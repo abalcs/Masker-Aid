@@ -17,7 +17,7 @@ function handleSearchForm(event) {
         console.error("No blank inputs allowed");
         return;
     }
-    location='/results?state=' + stateInput;
+    location='/results';
 }
 
 for(var i = 0; i < allStatesArray.length; i++) {
