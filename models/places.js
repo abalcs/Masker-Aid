@@ -45,4 +45,4 @@ Place.init(
 
 );
 
-module.exports = Place;
+module.exports = Places;
