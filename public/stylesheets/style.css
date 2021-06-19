@@ -88,7 +88,7 @@ footer {
   .container {
     padding: 0 16px;
     text-align: center;
-    height: 400px;
+    height: 80%;
   }
   
   .container::after, .row::after {
