@@ -6,7 +6,7 @@
 // var dropDown = document.getElementById('options');
   const searchBar = document.getElementById('autocomplete')
   const body = $('<body>');
-  var verify;
+  var verify ="mask";
 
   var placeHolder;
 
@@ -54,7 +54,7 @@
         
     <div class="container mt-2" style="text-align: center">
       <select class="choices" id="options">
-        <option value="disabled" disabled>Choose option...</option>
+        <option value="disabled" >Choose option...</option>
         <option value="mask">Mask Required</option>
         <option value="no-mask">No Mask Required</option>
         <option value="passport">Proof of Vaccine</option>
@@ -82,24 +82,33 @@
   document.body.addEventListener("click", function(e){
     e.preventDefault()
     if(e.target.matches("button")){
+
+      if(e.target.getAttribute("id") == "save-btn"){
+      sendToDB()
+  
+      }
+
       
-      sendToDB(placeHolder)
+     
     }
   })
 
-  
 
-  function sendToDB(placeHolder){
 
-    console.log("YOOOOOOOOOOOOOOOOOOO")
+
+
+
+
+  async function sendToDB(){
+
+ console.log("STEP 1")
     console.log(placeHolder)
+    console.log(verify)
 
 
-
-    fetch('/api/places/mask', {
+    const response = await fetch('/api/place/mask', {
       method: 'post',
       body: JSON.stringify({
-        // username: username,
         business_id: placeHolder.place_id,
         business_name: placeHolder.name,
         business_address: placeHolder.adr_address,
@@ -107,21 +116,28 @@
         mask_selection: verify
       }),
       headers: { 'Content-Type': 'application/json' }
-    }).then((resp) => resp.json()).then((data) => {
-      console.log("From the Back end")
-    })
+    });
+
+
+    console.log(response)
 
 
 
-  }
 
-
-  // etch('/api/users', {
+   
+  // fetch('/api/users/mask', {
   //   method: 'post',
   //   body: JSON.stringify({
-  //     username,
-  //     email,
-  //     password
+  //     business_id: placeHolder.place_id,
+  //     business_name: placeHolder.name,
+  //     business_address: placeHolder.adr_address,
+  //     business_map_url: placeHolder.url,
+  //     mask_selection: verify
   //   }),
+  //   headers: { 'Content-Type': 'application/json' }
+  // }).then((resp) => resp.json()).then((data) => {
+  //     console.log(data)
+  //   })
 
-//});
+
+};

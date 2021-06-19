@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const Place  = require("../../models/place")
 
 //GET api/places/:id
 // router.get('/:id', async (req, res) => {
@@ -12,24 +12,23 @@ const { User } = require('../../models');
 //     }
 // });
 
+
+
 router.post('/mask', (req, res) => {
+
+    console.log("STEP 2")
     console.log("You Found me")
     console.log(req.body)
     console.log("End of req")
-    // User.create({
-    //   username: req.body.username,
-    //   email: req.body.email,
-    //   password: req.body.password,
-    // })
-    // .then(userData => {
-    //   req.session.save(() => {
-    //     req.session.user_id = userData.id;
-    //     req.session.username = userData.username;
-    //     req.session.loggedIn = true;
+
     
-    //     res.json(userData);
-    //   });
-    // });
+
+    Place.create(req.body)
+    .then(addedPlace => {
+        console.log("STEP 3")
+        res.json(addedPlace);
+      });
+    
   });
 
 

@@ -4,6 +4,6 @@ const placesRoutes = require('./placesRoutes');
 
 
 router.use('/users', userRoutes);
-router.use('/places', placesRoutes);
+router.use('/place', placesRoutes);
 
 module.exports = router;
