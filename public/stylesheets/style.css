@@ -25,10 +25,6 @@ button {
     display: flex;
 }
 
-.img {
-    margin-top: 20px;
-}
-
 .imgs{
   border-radius: 50%;
   display: block;

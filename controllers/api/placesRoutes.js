@@ -12,16 +12,12 @@ const Place  = require("../../models/place")
 //     }
 // });
 
-
-
 router.post('/mask', (req, res) => {
 
     console.log("STEP 2")
     console.log("You Found me")
     console.log(req.body)
     console.log("End of req")
-
-    
 
     Place.create(req.body)
     .then(addedPlace => {
@@ -30,6 +26,5 @@ router.post('/mask', (req, res) => {
       });
     
   });
-
 
   module.exports = router;

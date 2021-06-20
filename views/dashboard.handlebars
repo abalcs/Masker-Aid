@@ -5,23 +5,27 @@
   }
 </style>
 
-<div class="card bg-light row"></div>
+<div class="card bg-white row text-center" style="border: none;">
     <h1>Tired of not knowing if you need your mask?</h1>
     <p>click the button below to add mask status updates to our growing list of user-submitted business in your area!</p>
 
-    <form id="input-form" class="mt-1">
+    <form id="input-form" class="mt-2 mb-4">
         <select class="browser-default ms-3 bg-warning shadow"  id="input" style="display: none;">
         </select><br>
         <button id="button" type="submit" name="action" class="bg-warning text-dark rounded shadow" style="width: 9rem; font-size: 1.15rem;">See My Area!</button>
     </form>
 
-    <div class="img">
-        <img src="https://www.azdisabilitylaw.org/wp-content/uploads/2020/06/surgical-mask.jpg" alt="a picture of a mask" width="550px" height="350px">
-    </div>
-
     {{#if loggedIn}}
       <h5>Welcome back, {{username}}!</h5>
     {{/if}}
 
-    <script src="/javascript/results.js"></script>
+    <div class="img">
+        <img src="https://www.azdisabilitylaw.org/wp-content/uploads/2020/06/surgical-mask.jpg" alt="a picture of a mask" width="550px" height="350px">
+    </div>
 
+    {{!-- {{#if loggedIn}}
+      <h5>Welcome back, {{username}}!</h5>
+    {{/if}} --}}
+
+    <script src="/javascript/results.js"></script>
+</div>
