@@ -75,7 +75,7 @@
   document.body.addEventListener("change", function(e){
     e.preventDefault()
     if(e.target.matches("select")){
-      verify =e .target.value
+      verify = e.target.value
     }
   })
   
@@ -85,19 +85,10 @@
 
       if(e.target.getAttribute("id") == "save-btn"){
       sendToDB()
-  
-      }
-
-      
-     
+      alert('Thanks for sharing!')
+      } 
     }
   })
-
-
-
-
-
-
 
   async function sendToDB(){
 
@@ -120,10 +111,6 @@
 
 
     console.log(response)
-
-
-
-
    
   // fetch('/api/users/mask', {
   //   method: 'post',
