@@ -110,10 +110,6 @@
 
 
     console.log(response)
-
-
-
-
    
   // fetch('/api/users/mask', {
   //   method: 'post',
