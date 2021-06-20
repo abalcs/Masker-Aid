@@ -85,19 +85,9 @@
 
       if(e.target.getAttribute("id") == "save-btn"){
       sendToDB()
-  
-      }
-
-      
-     
+      } 
     }
   })
-
-
-
-
-
-
 
   async function sendToDB(){
 
