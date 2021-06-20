@@ -85,6 +85,7 @@
 
       if(e.target.getAttribute("id") == "save-btn"){
       sendToDB()
+      alert('Thanks for sharing!')
       } 
     }
   })

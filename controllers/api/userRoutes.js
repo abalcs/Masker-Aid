@@ -98,8 +98,6 @@ router.post('/', (req, res) => {
     });
   });
 
-
-
   router.post('/mask', (req, res) => {
     console.log("You Found me")
     // console.log(req.body)
