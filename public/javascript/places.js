@@ -2,6 +2,8 @@
   // const apiKey = 'AIzaSyDaXpjaqVUhl0MLKeyTqH2ZZIO-9izs96U';
   // const query = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=${apiKey}`
 
+// const { response } = require("express");
+
 // const { options } = require("../../models/User");
 // var dropDown = document.getElementById('options');
   const searchBar = document.getElementById('autocomplete')
@@ -20,7 +22,7 @@
         const place = autocomplete.getPlace();
         console.log('selected place', place);
 
-        let card = $('<div class="container" style="width: 28rem; max-height: 15rem; margin-left: 9.5%; margin-top: -50px; border: 2px solid black !important;"</div>');
+        let card = $('<div class="container" style="width: 28rem; max-height: 15rem; margin-left: 9.5%; margin-top: 100px; border: 2px solid black !important;"</div>');
 
 
         createCard(place, card)
@@ -84,10 +86,9 @@
       }),
       headers: { 'Content-Type': 'application/json' }
     });
-
-
+    
     console.log(response)
-   
+    retrieveFromDB();
   // fetch('/api/users/mask', {
   //   method: 'post',
   //   body: JSON.stringify({
@@ -102,7 +103,46 @@
   //     console.log(data)
   //   })
 
-
 };
+
+function retrieveFromDB() {
+  fetch('/api/place/mask', {
+    method: 'get',
+      
+    headers: { 'Content-Type': 'application/json' }
+  }).then(response => {
+    return response.json();
+  }).then(places => {
+    console.log(places)
+
+    $('#recents').html("")
+    const header1 = $('<p>').css({"text-decoration": "underline", "font-weight": "bold"}).text('Location')
+    const header2 = $('<p>').css({"text-decoration": "underline", "font-weight": "bold"}).text('Address')
+    const header3 = $('<p>').css({"text-decoration": "underline", "font-weight": "bold"}).text('Mask Status')
+    $('#recents').append(header1)
+    $('#recents').append(header2)
+    $('#recents').append(header3)
+    // <p style="text-decoration: underline; font-weight: bold;">Location</p>
+    // <p style="text-decoration: underline; font-weight: bold;">Address</p>
+    // <p style="text-decoration: underline; font-weight: bold;">Mask Status</p>
+
+    for(let i = 0; i < places.length; i++) {
+      const place = places[i];
+      const name = place.business_name
+      const address = place.business_address
+      const mask = place.mask_selection
+
+      const column1 = $('<p>').text(name)
+      const column2 = $('<p>').text('')
+      const column3 = $('<p>').text(mask)
+
+      $('#recents').append(column1)
+      $('#recents').append(column2)
+      $('#recents').append(column3)
+    }
+  })
+}
+
+retrieveFromDB();
 
 

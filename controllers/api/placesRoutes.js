@@ -24,7 +24,14 @@ router.post('/mask', (req, res) => {
         console.log("STEP 3")
         res.json(addedPlace);
       });
-    
   });
 
+router.get('/mask', (req, res) => {
+    Place.findAll({
+        limit: 10,
+    })
+    .then(Places => {
+        res.json(Places)
+    })
+})
   module.exports = router;
