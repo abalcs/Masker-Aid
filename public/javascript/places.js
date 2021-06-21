@@ -22,7 +22,7 @@
         const place = autocomplete.getPlace();
         console.log('selected place', place);
 
-        let card = $('<div class="container" style="width: 28rem; max-height: 15rem; margin-left: 9.5%; margin-top: 100px; border: 2px solid black !important;"</div>');
+        let card = $('<div class="container" style="width: 28rem; max-height: 15rem; margin-left: 9.5%; margin-top: -450px; border: 2px solid black !important;"</div>');
 
 
         createCard(place, card)
@@ -89,20 +89,6 @@
     
     console.log(response)
     retrieveFromDB();
-  // fetch('/api/users/mask', {
-  //   method: 'post',
-  //   body: JSON.stringify({
-  //     business_id: placeHolder.place_id,
-  //     business_name: placeHolder.name,
-  //     business_address: placeHolder.adr_address,
-  //     business_map_url: placeHolder.url,
-  //     mask_selection: verify
-  //   }),
-  //   headers: { 'Content-Type': 'application/json' }
-  // }).then((resp) => resp.json()).then((data) => {
-  //     console.log(data)
-  //   })
-
 };
 
 function retrieveFromDB() {
@@ -122,9 +108,6 @@ function retrieveFromDB() {
     $('#recents').append(header1)
     $('#recents').append(header2)
     $('#recents').append(header3)
-    // <p style="text-decoration: underline; font-weight: bold;">Location</p>
-    // <p style="text-decoration: underline; font-weight: bold;">Address</p>
-    // <p style="text-decoration: underline; font-weight: bold;">Mask Status</p>
 
     for(let i = 0; i < places.length; i++) {
       const place = places[i];
@@ -132,9 +115,9 @@ function retrieveFromDB() {
       const address = place.business_address
       const mask = place.mask_selection
 
-      const column1 = $('<p>').text(name)
-      const column2 = $('<p>').text('')
-      const column3 = $('<p>').text(mask)
+      const column1 = $('<div style="text-align: left;">').text(name)
+      const column2 = $('<div style="text-align: left">').text('')
+      const column3 = $('<div style="text-align: left; border-bottom: 2px solid black;">').text(mask)
 
       $('#recents').append(column1)
       $('#recents').append(column2)

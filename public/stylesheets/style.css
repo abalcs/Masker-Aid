@@ -149,11 +149,6 @@ footer {
   transition: 0.3s;
   }
 
-  #recents {
-    display: flex;
-    justify-content: space-around;
-  }
-
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;
