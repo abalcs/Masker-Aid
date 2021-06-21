@@ -1,11 +1,3 @@
-//$('document').ready(function(){
-  // const apiKey = 'AIzaSyDaXpjaqVUhl0MLKeyTqH2ZZIO-9izs96U';
-  // const query = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=${apiKey}`
-
-// const { response } = require("express");
-
-// const { options } = require("../../models/User");
-// var dropDown = document.getElementById('options');
   const searchBar = document.getElementById('autocomplete')
   const body = $('<body>');
   var verify ="mask";

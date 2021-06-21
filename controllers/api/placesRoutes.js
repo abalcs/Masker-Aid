@@ -28,7 +28,7 @@ router.post('/mask', (req, res) => {
 
 router.get('/mask', (req, res) => {
     Place.findAll({
-        limit: 10,
+        limit: 20,
     })
     .then(Places => {
         res.json(Places)
