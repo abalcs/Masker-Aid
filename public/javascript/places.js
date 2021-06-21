@@ -20,29 +20,10 @@
         const place = autocomplete.getPlace();
         console.log('selected place', place);
 
-        let card = $('<div class="border mt-4" style="max-width: 25rem; margin-left: auto; margin-right: auto; border: 2px solid black !important;">');
+        let card = $('<div class="container" style="width: 28rem; max-height: 15rem; margin-left: 9.5%; margin-top: -50px; border: 2px solid black !important;"</div>');
 
 
         createCard(place, card)
-        // Append Place information dynamically
-
-        // $('body').append(card.append(`<div class="container mt-2">${place.name} <br>${place.adr_address}<br><a href="${place.url}" target="_blank">View on Maps</a></div><label for="choices"></label>
-        
-        // <div class="container mt-2" style="text-align: center">
-        //   <select name="choices" id="options">
-        //     <option value="disabled" disabled>Choose option...</option>
-        //     <option value="mask">Mask Required</option>
-        //     <option value="no-mask">No Mask Required</option>
-        //     <option value="passport">Proof of Vaccine</option>
-        //   </select>
-        //   <br>
-        //   <button class="btn-warning rounded shadow mb-2" id="save-btn">Save</button>
-        // </div>`))
-
-        // fetch(`/api/places/${place.place_id}`, {
-        // }).then((resp) => resp.json()).then((data) => {
-        //   console.log('mask status from our api', data)
-        // })
       }, 300);
     })
   };
@@ -50,9 +31,9 @@
 
   function createCard(place, card){
 
-    $('body').append(card.append(`<div class="container mt-2">${place.name} <br>${place.adr_address}<br><a href="${place.url}" target="_blank">View on Maps</a></div><label for="choices"></label>
+    $('body').append(card.append(`<div class="container">${place.name} <br>${place.adr_address}<br><a href="${place.url}" target="_blank">View on Maps</a></div><label for="choices"></label>
         
-    <div class="container mt-2" style="text-align: center">
+    <div class="container" style="text-align: center; margin-top: -25%;">
       <select class="choices" id="options">
         <option value="disabled" >Choose option...</option>
         <option value="mask">Mask Required</option>
@@ -62,11 +43,6 @@
       <br>
       <button class="btn-warning rounded shadow mb-2" id="save-btn">Save</button>
     </div>`))
-
-    // fetch(`/api/places/${place.place_id}`, {
-    // }).then((resp) => resp.json()).then((data) => {
-    //   console.log('mask status from our api', data)
-    // })
 
     placeHolder = place
   }
@@ -128,3 +104,5 @@
 
 
 };
+
+
