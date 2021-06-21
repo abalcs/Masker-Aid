@@ -14,7 +14,7 @@
         const place = autocomplete.getPlace();
         console.log('selected place', place);
 
-        let card = $('<div class="container" style="width: 28rem; max-height: 15rem; margin-left: 9.5%; margin-top: -750px; border: 2px solid black !important;"</div>');
+        let card = $('<div class="container" style="width: 28rem; max-height: 15rem; margin-left: 9%; margin-top: 35px; border: 2px solid black !important;"</div>');
 
 
         createCard(place, card)
