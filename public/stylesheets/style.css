@@ -10,10 +10,10 @@ ul {
 }
 
 main {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     margin-top: 50px;
 }
 
@@ -149,12 +149,12 @@ footer {
   transition: 0.3s;
   }
 
-
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;
       display: block;
     }
+    
   }
 
 
