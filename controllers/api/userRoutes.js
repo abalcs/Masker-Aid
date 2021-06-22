@@ -104,21 +104,6 @@ router.post('/', (req, res) => {
     console.log("End of req")
     var place = JSON.parse(req.body)
     console.log(place)
-
-
-    // Place.create({
-    //     business_id: place.place_id,
-    //     business_name: place.name,
-    //     business_address: place.adr_address,
-    //     business_map_url: place.url,
-    //     mask_selection: verify
-    // })
-    // .then(userData => {
-
-    
-    //     res.json(userData);
-    //   });
-    
   });
 
 module.exports = router;
