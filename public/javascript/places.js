@@ -1,4 +1,4 @@
-  const searchBar = document.getElementById('autocomplete')
+const searchBar = document.getElementById('autocomplete')
   const body = $('<body>');
   var verify ="mask";
 
@@ -50,7 +50,7 @@
   })
   
   document.body.addEventListener("click", function(e){
-    e.preventDefault()
+    // e.preventDefault()
     if(e.target.matches("button")){
 
       if(e.target.getAttribute("id") == "save-btn"){
@@ -119,5 +119,3 @@ function retrieveFromDB() {
 }
 
 retrieveFromDB();
-
-

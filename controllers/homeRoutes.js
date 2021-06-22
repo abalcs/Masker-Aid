@@ -24,10 +24,10 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
-router.get('/about', (req, res) => {
-    res.render('about', {
-        loggedIn: req.session.loggedIn
-    })
-});
+// router.get('/about', (req, res) => {
+//     res.render('about', {
+//         loggedIn: req.session.loggedIn
+//     })
+// });
 
 module.exports = router;
