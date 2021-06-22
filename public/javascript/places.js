@@ -14,7 +14,7 @@ const searchBar = document.getElementById('autocomplete')
         const place = autocomplete.getPlace();
         console.log('selected place', place);
 
-        let card = $('<div class="container" style="width: 28rem; max-height: 15rem; margin-left: 9%; margin-top: 35px; border: 2px solid black !important;"</div>');
+        let card = $('<div></div>');
 
 
         createCard(place, card)
@@ -25,9 +25,9 @@ const searchBar = document.getElementById('autocomplete')
 
   function createCard(place, card){
 
-    $('body').append(card.append(`<div class="container">${place.name} <br>${place.adr_address}<br><a href="${place.url}" target="_blank">View on Maps</a></div><label for="choices"></label>
+    $('.results').append(card.append(`<div class="container">${place.name} <br>${place.adr_address}<br><a href="${place.url}" target="_blank">View on Maps</a></div><label for="choices"></label>
         
-    <div class="container" style="text-align: center; margin-top: -25%;">
+    <div class="container" style="text-align: center;">
       <select class="choices" id="options">
         <option value="disabled" >Choose option...</option>
         <option value="mask">Mask Required</option>
